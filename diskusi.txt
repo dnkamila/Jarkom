@@ -1,1 +1,5 @@
 Hai..
+
+Ini ada source yang buat multithreaded
+
+http://www.oracle.com/technetwork/java/socket-140484.html#multi
