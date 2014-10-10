@@ -1,5 +1,7 @@
 Hai..
 
 Ini ada source yang buat multithreaded
-
 http://www.oracle.com/technetwork/java/socket-140484.html#multi
+
+Sample MulticastSocket (sending, receive)
+http://www.java2s.com/Tutorial/Java/0320__Network/0220__MulticastSocket.htm
