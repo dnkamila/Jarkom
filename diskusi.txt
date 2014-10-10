@@ -18,3 +18,6 @@ Kirim file log (list of file, txt) dari server ke client : Server - Client - Lis
 masih hardcode dan masih simple
 Tp gw G EDIT dari yang martin yang terakhir multithreading, jadi ^ belom multithread.. Bingung :v
 Nah gw belom handle kalau misalnya di komputer ybs ada log.txt, mau gimana?
+
+Multithread chat room.. Bagus buat belajar imo
+http://www.ase.md/~aursu/ClientServerThreads.html
