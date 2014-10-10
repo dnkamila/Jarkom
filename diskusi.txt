@@ -16,3 +16,4 @@ http://java.dzone.com/articles/java-example-list-all-files
 DONE :
 Kirim file log (list of file, txt) dari server ke client : Server - Client - ListFiles <- Coba list dulu source code nya
 Tp gw g edit dari yang martin yang terakhir multithreading, jadi ^ belom multithread.. Bingung :v
+Nah gw belom handle kalau misalnya di komputer ybs ada log.txt, mau gimana?
