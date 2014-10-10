@@ -21,3 +21,33 @@ Nah gw belom handle kalau misalnya di komputer ybs ada log.txt, mau gimana?
 
 Multithread chat room.. Bagus buat belajar imo
 http://www.ase.md/~aursu/ClientServerThreads.html
+
+Flow kerja CMIIIW
+Update tiap 1 detik, dalam masa update itu : server cek ke semua client
+
+1. Multithread
+    Oenang, coba liat source code multithread chat room yg di atas
+2. List file
+    Tadi ngobrol sama kak ismail, buat cek integritas data (beda - dimodifikasi / g) coba pake md5sum
+Nah terus masih kepikiran gini :
+SERVER  : data1
+A       : data1
+B       : data1
+C       : data1
+
+misalnya A hapus data 1, nah tau darimana saatnya kita pindahin data dari server ke semua client atau nyamain sama client ke server
+SERVER  : data1
+A       : 
+B       : data1
+C       : data1
+Harapan
+SERVER  : 
+A       : 
+B       : 
+C       : 
+Nyatanya bakal gini g sih
+SERVER  : data1
+A       : data1
+B       : data1
+C       : data1
+Karena nyamian semua di client ke server
