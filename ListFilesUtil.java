@@ -61,6 +61,7 @@ public class ListFilesUtil {
         }
     }
  
+    //MODIFIED
     /**
      * List all files from a directory and its subdirectories
      * @param directoryName to be listed
@@ -74,7 +75,7 @@ public class ListFilesUtil {
  
         for (File file : fList){
             if (file.isFile()){
-                System.out.println(file.getAbsolutePath());
+                System.out.println(file.getAbsolutePath() + ";" + file.lastModified());
             } else if (file.isDirectory()){
                 listFilesAndFilesSubDirectories(file.getAbsolutePath());
             }
