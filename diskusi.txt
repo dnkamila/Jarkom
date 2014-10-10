@@ -10,4 +10,5 @@ Send file socket
 http://www.rgagnon.com/javadetails/java-0542.html
 
 format "bahasa" untuk client dan server untuk sinkronisasi : 
-pathfile;lastmodified
+pathfilerelative;lastmodified
+http://java.dzone.com/articles/java-example-list-all-files
