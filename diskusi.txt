@@ -12,3 +12,7 @@ http://www.rgagnon.com/javadetails/java-0542.html
 format "bahasa" untuk client dan server untuk sinkronisasi : 
 pathfilerelative;lastmodified
 http://java.dzone.com/articles/java-example-list-all-files
+
+DONE :
+Kirim file log (list of file, txt) dari server ke client : Server - Client - ListFiles <- Coba list dulu source code nya
+Tp gw g edit dari yang martin yang terakhir multithreading, jadi ^ belom multithread.. Bingung :v
