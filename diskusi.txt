@@ -7,3 +7,8 @@ Sample MulticastSocket (sending, receive)
 http://www.java2s.com/Tutorial/Java/0320__Network/0220__MulticastSocket.htm
 
 Buat list of file
+
+
+
+format "bahasa" untuk client dan server untuk sinkronisasi : 
+pathfile;lastmodified
