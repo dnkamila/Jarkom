@@ -27,7 +27,7 @@ public class ListFiles {
 	public static void main(String[] args) {
 		String directoryWindows = "D:\\Portable_IDM";
 		System.out.println(directoryWindows);
-		// listFilesUtil.listFiles(directoryWindows);
+		
 		ListFiles.listFilesAndFilesSubDirectories(directoryWindows,
 				directoryWindows);
 	}
