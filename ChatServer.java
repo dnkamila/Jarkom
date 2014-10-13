@@ -54,11 +54,22 @@ class ThreadClient extends Thread {
 			is = new DataInputStream(clientSocket.getInputStream());
 			os = new PrintStream(clientSocket.getOutputStream());
 
+			String name;
+			while (true) {
+				os.println("Please enter your shared folder path.");
+				name = is.readLine().trim();
+				if (name != null && !name.equals("")) {
+					break;
+				} else {
+					os.println("You should type your shared folder path");
+				}
+			}
+			
 			synchronized (this) {
 				for (int i = 0; i < listThreads.size(); i++) {
 					if (listThreads.get(i) != null) {
 						if (listThreads.get(i) == this) {
-							sharedFolderPath = path;
+							sharedFolderPath = name;
 							break;
 						}
 					}
@@ -72,12 +83,12 @@ class ThreadClient extends Thread {
 				}
 				for (int i = 0; i < listThreads.size(); i++) {
 					if (listThreads.get(i) != null) {
-//						if (listThreads.get(i) != this) {
-//							listThreads.get(i).os.println("Username " + name
-//									+ " send " + line);
-//						} else {
-//							listThreads.get(i).os.println(name + " : " + line);
-//						}
+						if (listThreads.get(i) != this) {
+							listThreads.get(i).os.println("Username " + name
+									+ " send " + line);
+						} else {
+							listThreads.get(i).os.println(name + " : " + line);
+						}
 					}
 				}
 				this.sleep(2500);
@@ -86,8 +97,8 @@ class ThreadClient extends Thread {
 			for (int i = 0; i < listThreads.size(); i++) {
 				if (listThreads.get(i) != null
 						&& listThreads.get(i) != this) {
-//					listThreads.get(i).os.println("Username " + name
-//							+ " is offline");
+					listThreads.get(i).os.println("Username " + name
+							+ " is offline");
 				}
 			}
 			
