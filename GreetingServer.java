@@ -4,11 +4,13 @@ import java.io.*;
 public class GreetingServer extends Thread
 {
    private ServerSocket serverSocket;
+   private FileInputStream fis;
+   private BufferedInputStream bis;
    
    public GreetingServer(int port) throws IOException
    {
       serverSocket = new ServerSocket(port);
-      serverSocket.setSoTimeout(10000);
+      serverSocket.setSoTimeout(3600000);
    }
 
    public void run()
@@ -42,15 +44,27 @@ public class GreetingServer extends Thread
       }
    }
    public static void main(String [] args)
-   {
-      int port = Integer.parseInt(args[0]);
-      try
-      {
-         Thread t = new GreetingServer(port);
-         t.start();
-      }catch(IOException e)
-      {
-         e.printStackTrace();
-      }
-   }
+	{
+		try
+		{
+			BufferedReader read = new BufferedReader(new FileReader(".\\DaftarIP.txt"));
+			String input = "";
+			//ini untuk multiple socket
+			while ((input = read.readLine()) != null)
+			{
+				String[] daftarUser = input.split(";");
+				String namaUser = daftarUser[1];
+				String IP = daftarUser[0].split(":")[0];
+				String port = daftarUser[0].split(":")[1];
+				Thread t = new GreetingServer(Integer.parseInt(port));
+				t.start();
+				System.out.println(namaUser + " " + IP + " " + port);
+			}
+			
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
 }
